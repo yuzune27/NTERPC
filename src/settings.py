@@ -11,7 +11,7 @@ def read_ver():
     return config["PROFILE"]["Version"]
 
 
-def get_config():
+def get_userdata():
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     try:
         with open("./settings/config.json", "r", encoding="UTF-8") as f:

@@ -11,7 +11,7 @@ a = Analysis(
         'src.tray',
         'src.proc',
         'src.rpc',
-        'src.config',
+        'src.settings',
         'src.log'
     ],
     hookspath=[],

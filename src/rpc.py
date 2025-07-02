@@ -1,12 +1,9 @@
 import time
 from discordrp import Presence
-from src.config import read_ver
+from src.settings import read_ver, get_userdata
 from src.proc import process_check
 from src.RPCData import RPCData, TimeStamps, Assets, Buttons, convert_to_dict
 from src.PlayerData import PlayerData
-from src.config import get_config
-
-cid = "1389789692878393424"
 
 def visible_set(uid: int, uid_visible: bool):
     if uid_visible:
@@ -16,6 +13,8 @@ def visible_set(uid: int, uid_visible: bool):
     return uid_str
 
 def rpc(player_data: PlayerData):
+    cid = "1389789692878393424"
+
     start_time = int(time.time())
     version = read_ver()
 
@@ -43,9 +42,8 @@ def rpc(player_data: PlayerData):
         presence.set(convert_to_dict(data))
         while True:
             if process_check():
-                if player_data != get_config():
-                    player_data = get_config()
-                    data.assets.small_text = player_data.Player
+                if player_data != get_userdata():
+                    player_data = get_userdata()
                     data.buttons[0].label = player_data.BtnLabel
                     data.buttons[0].url = player_data.BtnUrl
                     data.details = player_data.Player

@@ -3,14 +3,14 @@ from src.tray import taskTray
 from datetime import datetime
 from src.proc import process_check
 from src.rpc import rpc
-from src.config import get_config
+from src.settings import get_userdata
 from src.log import log_write
 import time
 
 def app_run():
     dt_now = datetime.now().strftime("%Y%m%d%H%M%S%f")
     try:
-        player_data = get_config()
+        player_data = get_userdata()
     except Exception as e:
         log_write(dt=dt_now, status="error", app=None, content=e)
         return

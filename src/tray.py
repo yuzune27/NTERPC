@@ -2,7 +2,7 @@ from pystray import Icon, Menu, MenuItem
 from PIL import Image
 import os
 import sys
-import src.config as config
+import src.settings as config
 
 def resource_path(relative_path):
     if hasattr(sys, '_MEIPASS'):
