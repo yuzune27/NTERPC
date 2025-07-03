@@ -1,13 +1,7 @@
 from pystray import Icon, Menu, MenuItem
 from PIL import Image
-import os
-import sys
 import src.settings as config
-
-def resource_path(relative_path):
-    if hasattr(sys, '_MEIPASS'):
-        return os.path.join(sys._MEIPASS, relative_path)
-    return os.path.join(os.path.abspath("."), relative_path)
+from src.path import resource_path
 
 class taskTray:
     def __init__(self):

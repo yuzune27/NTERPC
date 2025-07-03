@@ -24,7 +24,7 @@ a = Analysis(
     noarchive=False,
 )
 
-a.datas += [('Icon.png', '.\\Icon.png', 'DATA')]
+a.datas += [('Icon.png', '.\\img\\Icon.png', 'DATA')]
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(

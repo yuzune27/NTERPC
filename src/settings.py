@@ -3,11 +3,17 @@ import json
 import os
 import sys
 from src.PlayerData import PlayerData
+from src.path import get_executable_dir
 
 
 def read_ver():
     config = configparser.ConfigParser()
-    config.read('./settings/version.ini')
+    if hasattr(sys, '_MEIPASS'):
+        config_path = os.path.join(get_executable_dir(), 'settings', 'version.ini')
+    else:
+        config_path = './settings/version.ini'
+
+    config.read(config_path, encoding="utf-8")
     return config["PROFILE"]["Version"]
 
 
