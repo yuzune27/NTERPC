@@ -9,11 +9,11 @@ from src.path import get_executable_dir
 def read_ver():
     config = configparser.ConfigParser()
     if hasattr(sys, '_MEIPASS'):
-        config_path = os.path.join(get_executable_dir(), 'settings', 'version.ini')
+        version_path = os.path.join(get_executable_dir(), 'settings', 'version.ini')
     else:
-        config_path = './settings/version.ini'
+        version_path = './settings/version.ini'
 
-    config.read(config_path, encoding="utf-8")
+    config.read(version_path, encoding="utf-8")
     return config["PROFILE"]["Version"]
 
 
@@ -23,7 +23,7 @@ def get_userdata():
         with open("./settings/config.json", "r", encoding="UTF-8") as f:
             data = json.load(f)
     except FileNotFoundError:
-        with open(rf"{script_dir}\config.json", "r", encoding="UTF-8") as f:
+        with open(rf"{script_dir}\settings\config.json", "r", encoding="UTF-8") as f:
             data = json.load(f)
 
     player_data = PlayerData(

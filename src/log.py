@@ -5,10 +5,11 @@ import logging
 def log_write(dt, status, app, content):
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
 
-    os.makedirs("log", exist_ok=True)
+    log_dir = os.path.join(script_dir, "log")
+    os.makedirs(log_dir, exist_ok=True)
 
     logger = logging.getLogger(__name__)
-    log_path = rf"{script_dir}\log\rpc{dt}.log"
+    log_path = os.path.join(log_dir, f"rpc{dt}.log")
     logging.basicConfig(filename=log_path, encoding="utf-8", level=logging.INFO, format="[%(asctime)s] %(message)s")
     if status == "ok":
         if app:
