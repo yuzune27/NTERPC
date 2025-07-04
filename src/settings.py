@@ -30,8 +30,6 @@ def get_userdata():
         Player=data["Player"],
         UID=data["UID"],
         UIDVisible=data["UIDVisible"],
-        BtnLabel = data["BtnLabel"],
-        BtnUrl = data["BtnUrl"],
     )
 
     return player_data

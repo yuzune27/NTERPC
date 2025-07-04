@@ -1,7 +1,5 @@
 {
   "Player": "Name",
   "UID": 123456789,
-  "UIDVisible": true,
-  "BtnLabel": "公式サイト",
-  "BtnUrl": "https://nte.perfectworld.com/"
+  "UIDVisible": true
 }

@@ -1,9 +1,7 @@
-import dataclasses
+from dataclasses import dataclass
 
-@dataclasses.dataclass
+@dataclass
 class PlayerData:
     Player: str
     UID: int
     UIDVisible: bool
-    BtnLabel: str
-    BtnUrl: str

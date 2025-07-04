@@ -1,11 +1,12 @@
-import dataclasses
+from dataclasses import dataclass, asdict
 
-@dataclasses.dataclass
+
+@dataclass
 class TimeStamps:
     start: int
 
 
-@dataclasses.dataclass
+@dataclass
 class Assets:
     large_image: str
     large_text: str
@@ -13,19 +14,13 @@ class Assets:
     small_text: str
 
 
-@dataclasses.dataclass
-class Buttons:
-    label: str
-    url: str
-
-
-@dataclasses.dataclass
+@dataclass
 class RPCData:
     details: str
     state: str
     timestamps: TimeStamps
     assets: Assets
-    buttons: list[Buttons]
+
 
 def convert_to_dict(data: RPCData) -> dict:
-    return dataclasses.asdict(data)
+    return asdict(data)
